@@ -31,7 +31,7 @@ final class ProviderTest extends Framework\TestCase
 
     public function testAssertJsonStringSameAsJsonStringFailsWhenExpectedIsNotJson(): void
     {
-        $expected = $this->faker()->sentence;
+        $expected = self::faker()->sentence;
 
         $actual = <<<'JSON'
 {
@@ -54,7 +54,7 @@ JSON;
 }
 JSON;
 
-        $actual = $this->faker()->sentence;
+        $actual = self::faker()->sentence;
 
         $this->expectException(Framework\ExpectationFailedException::class);
 
@@ -63,7 +63,7 @@ JSON;
 
     public function testAssertJsonStringSameAsJsonStringFailsWhenExpectedAndActualAreNotJson(): void
     {
-        $value = $this->faker()->sentence;
+        $value = self::faker()->sentence;
 
         $this->expectException(Framework\ExpectationFailedException::class);
 

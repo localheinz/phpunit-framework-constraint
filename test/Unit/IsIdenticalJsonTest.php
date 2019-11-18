@@ -29,7 +29,7 @@ final class IsIdenticalJsonTest extends Framework\TestCase
 
     public function testExtendsConstraint(): void
     {
-        $this->assertClassExtends(Framework\Constraint\Constraint::class, IsIdenticalJson::class);
+        self::assertClassExtends(Framework\Constraint\Constraint::class, IsIdenticalJson::class);
     }
 
     public function testEvaluateReturnsNullWhenValuesAreIdentical(): void
@@ -55,7 +55,7 @@ JSON;
 }
 JSON;
 
-        $description = $this->faker()->sentence;
+        $description = self::faker()->sentence;
         $returnResult = true;
 
         $constraint = new IsIdenticalJson($value);
