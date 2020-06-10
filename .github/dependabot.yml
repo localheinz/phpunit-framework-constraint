@@ -1,0 +1,20 @@
+version: 2
+updates:
+- package-ecosystem: composer
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  labels:
+  - dependency
+  versioning-strategy: increase
+  ignore:
+  - dependency-name: phpunit/phpunit
+    versions:
+    - ">= 0"
+  - dependency-name: sebastian/diff
+    versions:
+    - ">= 0"
+  commit-message:
+    prefix: Build
+    include: scope
